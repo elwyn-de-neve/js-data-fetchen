@@ -1,0 +1,20 @@
+{
+  "name": "js-les-8-data-fetchen",
+  "version": "1.0.0",
+  "description": "1. NPM initialiseren `npm init`\r 2. Parcel installeren `npm i parcel --save-dev`\r 3. Parcel plugin Nuke Distribution installeren `npm i parcel-plugin-nuke-dist --save-dev`\r 4. Aanmaken src map\r 5. Aanmaken index.html in src map\r 6. Aanmaken styles.css in src map\r 7. Koppelen styles.css in de head section `<link rel=\"stylesheet\" href=\"./styles.css\"/>`\r 8. Aanmaken main.js in src map\r 9. Koppelen main.js boven het sluiten van de body tag `<script src=\"./main.js\" type=\"module\"></script>`\r 10. Script tag vervangen in package.json `\"scripts\": {\r     \"start\": \"parcel src/index.html\",\r     \"build\": \"parcel build src/index.html\"\r     },`\r 11. Test of alle koppelingen (js en css) en packages (parcel) werken!",
+  "main": "index.js",
+  "scripts": {
+    "start": "parcel src/index.html",
+    "build": "parcel build src/index.html"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "parcel": "^2.3.2",
+    "parcel-plugin-nuke-dist": "^1.0.1",
+    "process": "^0.11.10"
+  },
+  "dependencies": {
+    "axios": "^0.26.0"
+  }
+}
