@@ -1,26 +1,64 @@
-/*// Async & Await worden altijd samen gebruikt
-async function fetchRandomJoke() {
-    // console.log('Script is running!');
-    try {
-        // Request naar een specifieke endpoint
-        const response = await axios.get('https://api.chucknorris.io/jokes/random');
-        console.log( response.data.value );
+import axios from "axios";
 
-    } catch ( e ) {   // Catch vangt automatisch de error af
-        console.error( e )
+/* ------------------------------------------------------------------------ */
+// Function to fetch a random joke
+/* ------------------------------------------------------------------------ */
+async function fetchRandomJoke() {
+
+    try {
+
+        // Request naar een specifieke endpoint
+        const response = await axios.get( "https://api.chucknorris.io/jokes/random" );
+        console.log( `Random joke: ${ response.data.value }` );
+
+    } catch ( e ) {
+
+        console.error( e );
+
     }
 }
 
 fetchRandomJoke();
 
+
+/* ------------------------------------------------------------------------ */
+// Function to fetch a joke by category
+/* ------------------------------------------------------------------------ */
 async function fetchJokeByCategory( category ) {
-    // console.log('Script is running!');
+
     try {
-        const response = await axios.get(`https://api.chucknorris.io/jokes/random?category=${category}`);
-        console.log( response.data.value );
+
+        const response = await axios.get( `https://api.chucknorris.io/jokes/random?category=${ category }` );
+        console.log( `Joke by category: ${ response.data.value }` );
+
     } catch ( e ) {
+
         console.error( e );
+
     }
 }
 
-fetchJokeByCategory('sport');*/
+fetchJokeByCategory( "sport" );
+
+/* ------------------------------------------------------------------------ */
+// Function to fetch a joke by category v2
+/* ------------------------------------------------------------------------ */
+async function fetchJokeByCategoryV2( category ) {
+
+    try {
+
+        const response = await axios.get( `https://api.chucknorris.io/jokes/random`, {
+            params: {
+                category: category
+            }
+        } );
+        console.log( `Joke by category V2: ${ response.data.value }` );
+
+    } catch ( e ) {
+
+        console.error( e );
+
+    }
+}
+
+fetchJokeByCategoryV2( "sport" );
